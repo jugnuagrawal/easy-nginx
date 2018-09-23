@@ -1,0 +1,30 @@
+{
+  "name": "easy-nginx",
+  "version": "1.0.0",
+  "description": "Configure nginx from GUI",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jugnuagrawal/easy-nginx.git"
+  },
+  "keywords": [
+    "nginx",
+    "GUI",
+    "routes",
+    "configure"
+  ],
+  "author": "Jugnu Agrawal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jugnuagrawal/easy-nginx/issues"
+  },
+  "homepage": "https://github.com/jugnuagrawal/easy-nginx#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "log4js": "^3.0.5"
+  }
+}

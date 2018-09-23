@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <meta name="author" content="Jugnu Agrawal">
+    <title>Easy Nginx</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        height: 100vh;
+    }
+    #loginBlock button.btn{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .sidenav{
+        min-width: 300px; 
+    }
+    .list-group-item.active{
+        background-color:#28a745;
+        color: #fff; 
+        border-color: #ccc;
+    }
+    .d-none{
+        display: none !important;
+    }
+    .btn{
+        min-width: 120px;
+    }
+    .sub-heading{
+        display: none;
+        min-height: 64px;
+        max-height: 64px;
+    }
+    textarea{
+        resize: none;
+    }
+    .list-group{
+        overflow-y: auto;
+    }
+</style>
+
+<body class="d-flex flex-column w-100 justify-content-center">
+    <div class="header bg-dark text-white p-3 w-100 d-flex align-items-center justify-content-between d-none">
+        <h5 class="m-0 font-weight-bold">Easy Nginx</h5>
+        <div class="d-flex align-items-center">
+            <button id="newConfig" class="btn btn-sm btn-success font-weight-bold">Add new</button>
+            <button id="reloadNginx" class="btn btn-sm btn-warning font-weight-bold ml-3">Reload Nginx</button>
+        </div>
+    </div>
+    <div class="d-flex w-100 h-100 content d-none">
+        <div class="sidenav d-flex flex-column bg-dark border-right">
+            <small class="px-3 py-2 text-white bg-success m-0">Available Configuration</small>
+            <ul id="sitesList" class="list-group list-group-flush h-100">
+                <a href="#" class="list-group-item list-group-item-action">One</a>
+                <a href="#" class="list-group-item list-group-item-action">two</a>
+                <a href="#" class="list-group-item list-group-item-action">three</a>
+            </ul>
+        </div>
+        <div class="body d-flex flex-column w-100 h-100">
+            <div id="subHeading" class="sub-heading p-3 justify-content-between align-items-center border-bottom">
+                <div class="d-flex align-items-center w-75">
+                    <span id="configuration" class="font-weight-bold">Configuration</span>
+                    <div class="input-group input-group-sm ml-4">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </span>
+                        <input type="text" id="configName" class="form-control form-control-sm">
+                    </div>
+                    <span id="message" class="ml-4 w-50"></span>
+                </div>
+                <button id="saveConfig" class="btn btn-sm btn-success">Save</button>
+            </div>
+            <textarea id="configData" class="new-config d-flex flex-column p-3 m-0 h-100" placeholder="Write your configuration here"></textarea>
+        </div>
+    </div>
+    <div id="loginBlock" class="card w-25 align-self-center">
+        <div class="card-header bg-white">
+            <h3 class="text-primary font-weight-bold">Easy Nginx</h3>
+            <p class="text-dark m-0">Login</p>
+        </div>
+        <div class="card-body">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="text-secondary">Username</label>
+                    <input id="username" type="text" class="form-control" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-secondary">Password</label>
+                    <input id="password" type="password" class="form-control" name="password">
+                </div>
+                <p id="loginMessage">&nbsp;</p>
+            </form>
+        </div>
+        <button class="btn btn-dark p-3 font-weight-bold" type="button" id="loginSubmit">Login</button>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
